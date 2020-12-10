@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * @author Citlali Orduño
+ * @author Equipo 5
  */
 public class EventDispacher {
 

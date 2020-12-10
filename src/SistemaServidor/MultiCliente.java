@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
 
 /**
  *
- * @author Citlali Orduño
+ * @author Equipo 5
  */
 public class MultiCliente implements Runnable {
 

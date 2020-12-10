@@ -4,7 +4,7 @@ import SistemaEventos.Event;
 
 /**
  *
- * @author Citlali Orduño
+ * @author Equipo 5
  */
 
 /* Clase Handler de tipo interfaz que extiende de Events */

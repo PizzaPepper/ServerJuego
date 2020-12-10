@@ -4,7 +4,7 @@ import SistemaEventos.Event;
 
 /**
  *
- * @author Citlali Orduño
+ * @author Equipo 5
  */
 
 /* Clase que comunica el evento de Ejecutar Lanzada con el Handler. */
