@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaServidor;
+
+/* Librerias a utilizar. */
 import java.net.Socket;
 import Serializador.SerializadorObjetos;
 import SistemaHandler.EventDispacher;
@@ -13,38 +10,37 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 
-
 /**
  *
  * @author Citlali Orduño
  */
 public class MultiCliente implements Runnable {
 
+    /* Variable de tipo Socket. */
     private Socket socket;
 
+    /* Constructor que inicializa la variable. */
     public MultiCliente(Socket socket) {
-        this.socket= socket;
-        
+        this.socket = socket;
     }
-    
-    
+
+    /* Metodo run que hace funcionar a la clase de MultiCliente, en caso de 
+       que no pueda iniciar correctamente dicho metodo, se lanza una 
+       excepcion. */
     @Override
     public void run() {
-      SerializadorObjetos SObjeto= new SerializadorObjetos();
+        SerializadorObjetos SObjeto = new SerializadorObjetos();
         try {
-            InputStream is= socket.getInputStream();
-            ObjectInputStream obj= new ObjectInputStream(is);
-            
+            InputStream is = socket.getInputStream();
+            ObjectInputStream obj = new ObjectInputStream(is);
+
             Event evento = (Event) SObjeto.leerObjeto(obj);
-            
-           EventDispacher evDis = new EventDispacher();
-           evDis.dispatch(evento);
-            
+
+            EventDispacher evDis = new EventDispacher();
+            evDis.dispatch(evento);
+
         } catch (IOException ex) {
-            System.out.println("Vale pedo"+ ex);
+            System.out.println(ex);
         }
-        
-        
     }
-    
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaHandler;
 
 import SistemaEventos.Event;
@@ -11,7 +6,9 @@ import SistemaEventos.Event;
  *
  * @author Citlali Orduño
  */
-public interface Handler<E extends Event>{
-    
-     public void onEvent(Event event);
+
+/* Clase Handler de tipo interfaz que extiende de Events */
+public interface Handler<E extends Event> {
+
+    public void onEvent(Event event);
 }
